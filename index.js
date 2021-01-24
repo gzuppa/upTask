@@ -5,6 +5,9 @@ const path = require('path')
 //CREATING SERVER
 const app = express();
 
+//LOAD STATICS
+app.use(express.static('public'))
+
 //PUG AVAILABILITY (VIEW ENGINE)
 app.set('view engine', 'pug');
 
