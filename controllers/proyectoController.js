@@ -11,5 +11,6 @@ exports.formularioProyecto = (req, res) => {
 }
 
 exports.nuevoProyecto = (req, res) => {
-    res.send("Enviaste el formulario")
+    //Send to console
+    console.log(req.body)
 }
