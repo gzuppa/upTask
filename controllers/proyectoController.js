@@ -31,8 +31,7 @@ exports.nuevoProyecto = async (req, res) => {
         })
     } else {
         //NO ERRORS, INSERT ON DATABASE
-        const url = slug(nombre).toLowerCase()
-        const proyecto = await Proyectos.create({ nombre, url });
+        const proyecto = await Proyectos.create({ nombre });
         res.redirect('/');
     }
 }
