@@ -12,5 +12,21 @@ exports.formularioProyecto = (req, res) => {
 
 exports.nuevoProyecto = (req, res) => {
     //Send to console
-    console.log(req.body)
+    // console.log(req.body)
+
+    //Validate input filled
+    const {nombre} = req.body;
+    let errores = [];
+    if (!nombre) {
+        errores.push({'texto': 'Agrega un nombre al proyecto'})
+    }
+    //IF ERROR EXISTS
+    if (errores.length > 0){
+        res.render('nuevoProyecto', {
+            nombrePagina: 'Nuevo Proyecto',
+            errores
+        })
+    } else {
+        //NO ERRORS
+    }
 }
