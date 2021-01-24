@@ -12,7 +12,7 @@ exports.formularioProyecto = (req, res) => {
     })
 }
 
-exports.nuevoProyecto = (req, res) => {
+exports.nuevoProyecto = async (req, res) => {
     //Send to console
     // console.log(req.body)
 
@@ -30,8 +30,7 @@ exports.nuevoProyecto = (req, res) => {
         })
     } else {
         //NO ERRORS, INSERT ON DATABASE
-        Proyectos.create({ nombre })
-            .then(()=> console.log('Insertado correctamente'))
-            .catch(error => console.log(error));
+        const proyecto = await Proyectos.create({ nombre });
+        res.redirect('/');
     }
 }
