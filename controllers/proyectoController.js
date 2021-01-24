@@ -1,9 +1,10 @@
 const Proyectos = require('../models/Proyectos')
-const slug = require('slug')
 
-exports.proyectoHome = (req, res) => {
+exports.proyectoHome = async (req, res) => {
+    const proyectos = await Proyectos.findAll()
     res.render('index', {
-        nombrePagina: 'Proyectos'
+        nombrePagina: 'Proyectos',
+        proyectos
     })
 };
 
