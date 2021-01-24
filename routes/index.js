@@ -11,6 +11,9 @@ module.exports = () => {
         proyectoController.formularioProyecto);
     router.post('/nuevo-proyecto', 
         body('nombre').not().isEmpty().trim().escape(), //not for negation, trim to delete empty spaces
-        proyectoController.nuevoProyecto);
+        proyectoController.nuevoProyecto
+    );
+    router.get('/proyectos/:url', proyectoController.proyectoPorUrl)
+
     return router;
 }
