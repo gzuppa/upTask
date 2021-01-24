@@ -1,11 +1,8 @@
 const express = require('express');
+const routes = require('./routes')
 
 //CREATING SERVER
 const app = express();
 
-//HOME ROUTE
-app.use('/', (req, res) => {
-    res.send('Hola')
-})
-
+app.use('/', routes());
 app.listen(5000);
