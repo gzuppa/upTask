@@ -14,6 +14,8 @@ module.exports = () => {
         proyectoController.nuevoProyecto
     );
     router.get('/proyectos/:url', proyectoController.proyectoPorUrl)
+    router.get('/proyecto/editar/:id',
+    proyectoController.formularioEditar)
 
     return router;
 }
