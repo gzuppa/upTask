@@ -4,6 +4,6 @@ const proyectoController = require('../controllers/proyectoController')
 
 module.exports = () => {
     //hOME ROUTE
-    router.get('/', proyectoController.proyectoHome)
+    router.get('/', proyectoController.proyectoHome);
     return router;
 }
